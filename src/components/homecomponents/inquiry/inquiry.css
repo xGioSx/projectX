@@ -1,0 +1,245 @@
+.inquiry{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 89%;
+    height: 420px;
+    background-image: url('../../../assets/pictures/background.png');
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+ 
+.loren {
+   width: 50%;
+   height: 139px;
+   color: white;
+
+}
+
+.loren h2 {
+    margin-top: -30px;
+    font-size: 32px;
+}
+
+
+
+
+
+.form1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 33%;
+    height: 70%;
+    background-color: white;
+    border-radius: 6px;
+}
+
+
+ .quote{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 33%;
+    height: 100%;
+    background-color: white;
+    row-gap: 7px;
+    margin-left: 10%;
+}
+
+.quote .item{
+    width: 115%;
+    height: 28px;
+    border: 1px solid #dee2e7
+} 
+.quantity{
+    width: 115%;
+    height: 28px;
+    border: 1px solid #dee2e7
+} 
+
+.quote .details{
+    width: 115%;
+    height: 56px;
+    border: 1px solid #dee2e7
+}
+
+
+.quote span{
+    width: 332px;
+    height: 28px;
+    font-size: 20px;
+}
+
+.option1{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.quote button {
+    width: 120px;
+    height: 12%;
+    background-color: #127FFF;
+    border: 1px solid #127FFF;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: width 0.2s; 
+}
+
+.quote button:hover {
+    background-color: #0e6bdb; 
+}
+
+
+@media (max-width:880px) {
+    .loren {
+        width: 100%;
+        margin-left: 120px;
+        margin-right: auto;
+    }
+
+    .loren :nth-child(3) {
+        display: none;
+     
+    }
+
+    .inquiry {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loren h2{
+        /* height: 50%; */
+        margin-top:0px;
+        width: 100%;
+    }
+
+    .form1 {
+        height: 50%;
+    }
+
+    .quote span {
+        font-size: 17px;
+    }
+
+    .quote {
+        min-width: 125px;
+        border-radius: 6px;
+    }
+
+    .quote .item {
+        width: 63%;
+    }
+    .quote .details {
+        width: 63%;
+    }
+
+    .quote .quantity {
+        width: 30%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+    .quote span {
+        display: none;
+    }
+}
+
+@media (max-width: 535px) {
+    .loren {
+        width: 100%;
+        margin-left: 80px;
+        margin-right: auto;
+    }
+
+    
+    .form1 {
+        display: flex;
+        align-items: flex-end;
+        height: 8%;
+        width: 34%;
+    }
+
+    .quote {
+        height: 100%;
+        width: 100%;
+        /* margin-right: 5%; */
+        background-color: blue;
+    }
+
+    .option1 {
+        display: flex;
+
+    }
+
+    /* .form1 button {
+        height: 100%;
+        width: 100%;
+        margin-left: px;
+    } */
+
+    .quote button {
+        height: 100%;
+        width: 100%;
+    }
+
+  .quote span {
+    display: none;
+  }
+
+  .quote input {
+    display: none;
+  }
+
+  .quote textarea {
+    display: none;
+  }
+   
+  .option1 input {
+    display: none;
+  }
+
+  .option1 select {
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 500px){
+
+    .inquiry {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+    }
+
+    .loren {
+        height: auto;
+    }
+
+    .quote button {
+        height: 20px;
+    }
+
+    .loren :first-child{
+        font-size: 20px;
+    }
+
+}

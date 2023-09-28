@@ -1,0 +1,320 @@
+.section_Sale {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 89%;
+    height: 240px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #DEE2E7;
+}
+
+.start {
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    border: 1px solid #DEE2E7;
+    width: 25%;
+    height: 100%;
+
+
+}
+.timer { 
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 198px;
+    margin-left: 8%;
+    margin-top: 15px;
+    
+}
+
+.timer div{
+   display:flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 25%;
+   height: 50px;
+   background-color: #606060;
+   color: white;
+   border-radius: 6px; 
+   text-transform:capitalize;
+   margin: 2px;
+   margin-left: 1px;
+}
+
+.timer div span {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 15%;
+
+}
+
+
+.text {
+    text-transform: capitalize;
+    width: 69%;
+    height: 50px;
+    margin-left: 8%;
+    font-size: 20px;
+    margin-top: 45px;
+    
+}
+
+
+
+
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+    width: 79%;
+    text-transform: capitalize;   
+}
+
+.products .watches span {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    padding-left:25px;
+}
+
+.products div {
+    display: flex;
+    width: 20%;
+    border: 1px solid #DEE2E7;
+    /* height: 100%; */
+      
+}
+
+.products .discounts {
+    border-radius: 29px;
+    background-color: #FFE3E3;
+    color:#EB001B;
+    width: 61px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+
+}
+
+.watches {
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;  
+    
+}
+
+
+
+.watches img {
+    height: 50%;
+    width: 90%;
+}
+
+
+
+
+@media (max-width:1150px) {
+    .text{
+        font-size: 15px   
+    }
+
+    .watches img {
+        height: 40%;
+        width: 80%;
+    }
+
+    .products {
+        width: 75%;
+    }
+
+}
+
+@media (max-width:1005px) {
+    .timer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:863) {
+    .timer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+
+}
+
+@media (max-width:805px) {
+    .watches img {
+        height: 90px;
+        width: 90px;
+    }
+}
+
+@media (max-width:877px) { 
+    .start {
+        display: flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        flex-wrap: wrap;
+        border: 1px solid #DEE2E7;
+        width: 20%;
+        height: 100%;
+    }
+
+    .timer { 
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .timer .time {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* flex-wrap: wrap; */
+        width: 25%;
+        height: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .start .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+    }
+
+    .products {
+        width: 80%;
+    }
+}
+
+@media (max-width:707px) {
+    .start {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    .start .text {
+        margin-top: 0%;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .start .timer {
+        display: flex;
+        flex-wrap: wrap;  
+    }
+    
+    .start .timer .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* flex-wrap: wrap; */
+        width: 20%;
+        height: 20%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 685px){
+    .section_Sale {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .start { 
+        display :flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 35%;
+    }
+
+    .start .text {
+        display: flex;
+        width: 15%;
+        height: 100%;
+        font-size: 13px;
+    }
+
+    .start .timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 75%;
+    }
+
+    .start .timer .time {
+        height: 45px;
+        width: 8%;
+    }
+
+    .products { 
+        overflow-y: scroll;
+        font-size: 15px;
+    }
+
+
+    .products { 
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 491px){
+    .products {
+        font-size: 10px;
+    }
+
+    .start .text {
+        display: flex;
+        width: 15%;
+        height: 80%;
+        font-size: 13px;
+    }
+
+    .products .watches img {
+        width: 60px;
+        height: 60px;
+    }
+   
+}

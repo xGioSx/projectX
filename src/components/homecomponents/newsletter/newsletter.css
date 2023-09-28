@@ -1,0 +1,88 @@
+.newsletter { 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 190px;
+    margin-top: 15px;
+    background-color: #EFF2F4;
+}
+
+.full_newsletter { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.full_newsletter .subscribe {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.full_newsletter .subscribe :first-child {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.20000000298023224px;
+    text-align: center;
+    color: #1C1C1C;
+    cursor: pointer;
+}
+
+.full_newsletter .subscribe :nth-child(2) {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.20000000298023224px;
+    text-align: center;
+    color: #606060;
+    cursor: pointer;
+
+}
+
+.full_newsletter .subscribe ::first-letter {
+    text-transform: uppercase;
+}
+
+
+
+.full_newsletter .sendmail {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 392px;
+    height: 30px;
+    gap: 5px;
+    
+
+}
+
+.full_newsletter .sendmail input {
+    border-radius: 4px;
+    padding-left: 5px;
+}
+
+.full_newsletter .sendmail button {
+    border-radius: 4px;
+    background-color: #127FFF;
+    color: white;
+    gap: 10px;
+    width: Hug (110px);
+    height: Fixed (40px);
+    top: 111px;
+    left: 807px;
+    padding: 0px 16px 0px 16px;
+    text-transform: capitalize;
+
+}
+
+.full_newsletter .sendmail button:active {
+    transform: scale(0.99);
+}

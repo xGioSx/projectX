@@ -1,0 +1,140 @@
+.related_product_full_container {
+    margin-top: 15px;
+    width: 100%;
+    height: 350px;
+}
+
+.related_product_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #DEE2E7;
+    border-radius:6px;
+    background-color: white;
+}
+
+.related_product_span {
+    color: #1C1C1C;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; 
+    letter-spacing: -0.2px;
+    margin-left: 35px;
+    display: flex;
+   
+}
+
+.related_list_div {
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+.related_list_ul {
+    display: flex;
+    flex-direction:row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 15px;
+    background-color: white;
+}
+
+.related_list_info{
+   display: flex;
+   flex-direction: column;
+}
+
+.related_list_info :first-child{
+    color:  black;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.related_list_info :nth-child(2) {
+    color:  #8B96A5;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 5px;
+}
+
+.related_list_ul img {
+    width: 155px;
+    height: 155px;   
+}
+
+
+
+@media (max-width:1240px) {
+    .related_product_container{
+        width: 100%;
+    }
+}
+
+@media (max-width:980px) {
+
+    .related_list_ul li {
+        width: 140px;
+    }
+
+    .related_list_ul img {
+        width: 130px;
+        height: 130px;   
+    }
+}
+
+@media (max-width:880px) {
+
+    .related_list_ul li {
+        width: 100px;
+    }
+
+    .related_list_ul img {
+        width: 80px;
+        height: 80px;   
+    }
+}
+
+@media (max-width:650px) {
+
+    .related_list_info :first-child{
+        color:  black;
+        font-family: Inter;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+
+    .related_list_info :nth-child(2) {
+        color:  #8B96A5;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 5px;
+    }
+}
+
+
+@media (max-width:500px) {
+    .related_list_ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}

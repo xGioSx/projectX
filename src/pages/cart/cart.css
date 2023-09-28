@@ -1,0 +1,21 @@
+.cart_page_container {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:720px) {
+    .cart_page_container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.cart_container button:active{
+    transform: scale(0.98);
+}
+
+.checkout_container button:active {
+    transform: scale(0.98);
+}
+
+

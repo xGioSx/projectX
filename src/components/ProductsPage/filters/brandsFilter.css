@@ -1,0 +1,63 @@
+.label_filter_ul{
+    text-transform: capitalize;
+    color:  #505050;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 9px 11px 8px 0px;
+    column-gap: 5px;
+   
+}
+
+.brand_filter_container {
+    border-bottom: 1px solid #8B96A5;
+}
+
+
+.filter_header_container:first-child {
+    color:#1C1C1C;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;  
+}
+
+.label_filter_ul li{
+    height: 36px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.label_filter_ul li:hover{
+    transform: scale(0.95);
+    background-color: rgb(110, 173, 215);
+    width: 100%;
+    border-radius: 5%;
+}
+
+
+.filtes_content_ul li:active {
+   transform: scale(0.9);
+}
+
+.see_all {
+    color: #0D6EFD; 
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.see_all span:hover {
+    transform: scale(1.5);
+
+}
+

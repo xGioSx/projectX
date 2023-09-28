@@ -1,0 +1,57 @@
+
+.filter_range_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.range_input {
+    width: 90%;
+    margin-left: 10px;
+}
+
+.minmax_value {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+
+.renge_value input{
+    width: 110px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.value_namber {
+    background-color: white; 
+    font-size: 18px; 
+
+}
+
+.price_range_container {
+    border-bottom: 1px solid #8B96A5;
+
+}
+
+.apply button{
+    /* display: inline-flex; */
+    width: 35%;
+    height: 40px;
+    background-color: white;
+    border-radius: 6px;
+    margin-left: 25%;
+    padding: 8px;
+    color: #0D6EFD;
+    margin-top: 15px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+
+
