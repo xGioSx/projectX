@@ -41,7 +41,7 @@ const Signup = () => {
               </div>
               <div className='google_box'>
                 <img className='logo_image' src={facebook} alt='' />
-                <span className="hover-text">sign in with facebook fefse</span>
+                <span className="hover-text">sign in with facebook</span>
               </div>
             </div>
           </div>
