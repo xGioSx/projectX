@@ -27,7 +27,7 @@ const Signup = () => {
               <div className='buttons'>
                  <button className='login_button'>Log In</button>
                 <Link to='/register' className='buttons'>
-                 <button className='create_new_account_button'>create new account</button>
+                  <button className='create_new_account_button'>create new account</button>
                 </Link>
               </div>
           <div className='singn_logo_box'>
@@ -41,7 +41,7 @@ const Signup = () => {
               </div>
               <div className='google_box'>
                 <img className='logo_image' src={facebook} alt='' />
-                <span className="hover-text">sign in with facebook</span>
+                <span className="hover-text">sign in with facebook fefse</span>
               </div>
             </div>
           </div>
