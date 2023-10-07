@@ -27,7 +27,7 @@ const Signup = () => {
               <div className='buttons'>
                  <button className='login_button'>Log In</button>
                 <Link to='/register' className='buttons'>
-                  <button className='create_new_account_button'>create new1212 account</button>
+                  <button className='create_new_account_button'>create new account</button>
                 </Link>
               </div>
           <div className='singn_logo_box'>

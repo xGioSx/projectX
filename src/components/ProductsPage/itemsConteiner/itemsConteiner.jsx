@@ -56,7 +56,10 @@ const ItemsConteiner = () => {
             </div>
           </div>
 
-          
+
+              
+
+
           {products.map((product) => {
                 return  (<div key={product.id} className='nav_2'>
                                 <div className='product_img1'>
@@ -128,7 +131,7 @@ const ItemsConteiner = () => {
                                     <div className='spans_cont'>
                                         <span className='lorem' style={{ display: show === product.id ? 'block' : 'fullproductid'}}>{product.description}</span>
                                         <span className='view_detail' onClick={() => (setShow(product.id) )}>
-                                        {/* <span className='view_detail'onClick={() => setShow((prevShow) => (prevShow === product.id ? '' : product.id))}> */}
+                                        
                                           
                                           View details</span>
                                     </div>
