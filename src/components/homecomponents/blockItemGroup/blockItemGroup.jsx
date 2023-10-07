@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './blockItemGroup.css'
+import { Link } from 'react-router-dom'
 import { getMostDemandProducts } from '../../../store/mostdemand'
 
 const BlockItemGroup = () => {
@@ -16,7 +17,9 @@ const BlockItemGroup = () => {
 
       <div className='left'>
         <div> <span> <b>home and <br />outdoor</b></span></div>
-        <button className='source_now'> source now </button>
+         <Link to='/productpage' className='source_now'>
+          <button className='source_now'> source now </button>
+          </Link>
       </div>
 
       <div className='product_all'>  

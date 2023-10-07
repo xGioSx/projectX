@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './product.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { getSinglProduct } from '../../../store/singlproduct';
 import product1 from '../../../assets/pictures/product1.png';
 import product3 from '../../../assets/pictures/product3.png';
 import product4 from '../../../assets/pictures/product4.png';
@@ -16,6 +18,8 @@ import chat from '../../../assets/logo/message.png';
 
 const Product = () => {
 
+    const dispatch = useDispatch ()
+
     const [selectedImage, setSelectedImage] = useState(product1);
 
     const handleImageClick = (image) => {
@@ -26,7 +30,6 @@ const Product = () => {
 
   return (
             <div className='about_product_container'>
-            {/* // პროდუქტის შესახებ ინფორმაცია , სურათები და ფასი*/}
         <div className='about_product_container2'>
         <div className='image_container'>
             <div className='main_image'>

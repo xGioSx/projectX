@@ -94,7 +94,7 @@
     cursor: pointer;
 }
 
-/* Rotate the arrowdown image by 180 degrees */
+
 .nav_head img.rotate {
     transform: rotate(180deg);
 }
@@ -147,7 +147,7 @@
     width: 100%;
     background-color: white;
     border: 1px solid #DEE2E7;
-    height: 230px;
+    height: auto;
     border-radius: 6px;
     margin-top: 20px;
 }
@@ -283,9 +283,16 @@
 }
 .rating_star {
     display: flex;
-    align-items: center;
-    column-gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+   
 }
+
+/* .rating_star svg path:hover{
+    fill: #FF9017;
+} */
+
+
 .order_info {
     display: flex;
     column-gap: 15px;
@@ -328,7 +335,6 @@
     flex-direction: column;
 }
 
-/* Add cursor pointer to the left side elements of checkboxes */
 .filter_box ul li,
 .filter_box span,
 .filter_box img,
@@ -341,4 +347,47 @@
     font-size: 1em;
     color: #0D6EFD;
     font-weight: 400;
+}
+
+
+
+
+
+
+.rating_star {
+    text-align: center;
+}
+.rating_star .rating-group {
+    display: inline-flex;
+}
+.rating_star input {
+    position: absolute;
+    list-style-type: none;
+}
+
+
+.rating-group input {
+    display: none;
+}
+
+.rating_star label {
+    margin: 0;
+    cursor: pointer;
+    list-style-type: none;
+}
+.rating_star label svg {
+    margin: 2px;
+    height: 40px;
+    width: 40px;
+    fill: #BFE2FF;
+    transition: fill 0.3s;
+}
+.rating_star input:checked ~ label svg {
+    fill: #BFE2FF;
+}
+.rating_star .rating-group:hover label svg {
+    fill: #FF9017;
+}
+.rating_star .rating-group input:hover ~ label svg {
+    fill: #BFE2FF;
 }

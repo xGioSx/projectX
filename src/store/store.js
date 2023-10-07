@@ -4,6 +4,7 @@ import MostDemandProductsReducer from "./mostdemand";
 import categoriesReducer from "./categories";
 import latestProductsReducer from "./latestproducts";
 import productsReducer from "./products";
+import singlproductReducer from "./singlproduct";
 
 const store = configureStore({
     reducer: {
@@ -12,7 +13,7 @@ const store = configureStore({
         categories: categoriesReducer,
         latestProducts: latestProductsReducer,
         products: productsReducer,
-       
+        singlProduct: singlproductReducer,
     }
 })
 

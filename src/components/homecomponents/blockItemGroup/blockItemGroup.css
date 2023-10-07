@@ -29,7 +29,7 @@
 
  .left button {
    width: 45%;
-   height: 15%;
+   height: 150%;
    margin-left: 20px;
    font-size: 16px;
    text-transform: capitalize;
@@ -37,6 +37,10 @@
    border-radius: 6px;
    cursor: pointer;
  }
+
+
+
+
 
  .left div {
    display: flex;
@@ -117,7 +121,7 @@
    }
    
    .left .source_now {
-      height: 70%;
+      height: 130%;
       background-color: white;
       color: #0D6EFD;
       width: 100px;

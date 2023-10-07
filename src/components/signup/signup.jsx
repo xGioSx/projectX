@@ -2,6 +2,8 @@ import React from 'react';
 import './signup.css';
 import google from '../../assets/logo/google.png';
 import facebook from '../../assets/logo/Facebook.png';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -15,15 +17,19 @@ const Signup = () => {
             <h1>Sign in</h1>
           </div>
           <div className='sign_inp_container'>
-            <label htmlFor='username'>User Name</label>
-            <input type='text' id='username' placeholder='Enter your user name' />
+              <label htmlFor='username'>User Name</label>
+              <input type='text' id='username' placeholder='Enter your user name' />
 
-            <label htmlFor='password'>Password</label>
-            <input type='password' id='password' placeholder='Enter your password' />
-            <span> <ins>forgot your password?</ins></span>
+              <label htmlFor='password'>Password</label>
+              <input type='password' id='password' placeholder='Enter your password' />
+              <span> <ins>forgot your password?</ins></span>
           </div>
-          <button>Log In</button>
-
+              <div className='buttons'>
+                 <button className='login_button'>Log In</button>
+                <Link to='/register' className='buttons'>
+                 <button className='create_new_account_button'>create new account</button>
+                </Link>
+              </div>
           <div className='singn_logo_box'>
             <div className='contactwith_span'>
               <span>or continue with</span>

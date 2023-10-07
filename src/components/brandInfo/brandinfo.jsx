@@ -10,6 +10,7 @@ import appstore from '../../assets/logo/appstore.png'
 import googlestore from '../../assets/logo/googlestore.png'
 import usa from '../../assets/flag/unitedstates.png'
 import arrowup from '../../assets/logo/arrowup.png'
+import { Link } from 'react-router-dom'
 
 
 const Brandinfo = () => {
@@ -24,11 +25,22 @@ const Brandinfo = () => {
                         <span>Best information about the company <br />gies here but now lorem ipsuma is</span>
                      </div>
                     <div className='soc_icons'>
-                        <img src={facebook} alt="" />
-                        <img src={tvitter} alt="" />
-                        <img src={linkedIn} alt="" />
-                        <img src={instagram} alt="" />
-                        <img src={youtube} alt="" />
+
+                      <div className='facebook'>
+                        <a href="https://www.facebook.com/" target='blank'> <img src={facebook} alt="fb" /></a>
+                      </div>
+
+                      <div className='titter'>
+                             <a href="https://www.twitter.com/" target='blank'> <img src={tvitter} alt="tvt" /></a>
+                      </div>
+
+                        <div className='linkedin'>
+                                <a href="https://www.linkedin.com/" target='blank'> <img src={linkedIn} alt="lnkd" /></a>
+                        </div>
+                        <div className='instagram'>
+                            <a href="https://www.instagram.com/" target='blank'> <img src={instagram} alt="inst" /></a>
+                        </div> 
+                       <div className='youtube'><a href="https://www.youtube.com/" target='blank'> <img src={youtube} alt="ytb" /></a></div> 
                     </div>  
                     
                 </div>
@@ -70,8 +82,8 @@ const Brandinfo = () => {
                 <div className='about'>
                     <ul className='about_ul'>
                         <li><b>for users</b></li> 
-                        <li>login</li> 
-                        <li>register</li> 
+                        <Link to='/signup' className='link_style' ><li>login</li> </Link>
+                        <Link to='/register' className='link_style'><li>register</li> </Link>
                         <li>settings</li> 
                         <li>my orders</li> 
                     </ul>

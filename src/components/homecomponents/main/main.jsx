@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './main.css'
 import userlogo from '../../../assets/logo/Avatar1.png'
 import { getCategories } from '../../../store/categories'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
 
@@ -47,7 +48,10 @@ const Main = () => {
             </div>
             <div className='buttons'>
               <button className='join_now'>join now</button>
-              <button className='log_in'>log in</button>
+                 <Link to='/signup' className='log_in'>
+                    <button className='log_in'>log in</button>
+                 </Link> 
+          
             </div>
           </div>
 

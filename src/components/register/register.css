@@ -130,6 +130,16 @@
     transition: background-color 0.3s, transform 0.2s;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 5px;
+    text-decoration: none;
+}
+
+
+
 
 .login_container .login_container2 .login_box button:hover {
     background-color: #174ae1;

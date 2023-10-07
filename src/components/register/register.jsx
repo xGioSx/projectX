@@ -25,13 +25,13 @@ const Register = () => {
                                 <label htmlFor='number'>phone number</label>
                                 <input type='tel' id='number' placeholder='Enter Phone Number' />
                             </div>   
-                        </div>
-    
-    
+                        </div>  
                         <label htmlFor='password'>Password</label>
                         <input type='password' id='password' placeholder='Enter your password' />
+                        <label htmlFor='password'>Confirm Password</label>
+                        <input type='password' id='password' placeholder='Re-Enter your password' />
                         <span> <ins>forgot your password?</ins></span>
-                    </div>
+                    </div>      
                     <button>Register</button>
     
                     <div className='singn_logo_box'>

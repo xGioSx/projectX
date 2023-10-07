@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../../../store/products'
 import './itemsConteiner.css'
-import phone from '../../../assets/pictures/smartphone.png'
-import rating from '../../../assets/logo/rating.png'
 import circle from '../../../assets/logo/circule.png'
 import favorite from '../../../assets/logo/favorite.png'
 
@@ -14,6 +12,10 @@ const ItemsConteiner = () => {
         useEffect(() => {
             dispatch(getProducts())
         }, [dispatch])
+
+  const [show, setShow]  = useState(''); 
+
+        
 
 
   return (
@@ -67,9 +69,55 @@ const ItemsConteiner = () => {
                                     </div>
                                     <div className='rating_box'>
                                         <div className='rating_star'>
-                                            <img src={rating} alt="" />
-                                            <span>7.5</span>
+                                            <div class="rating-group">     
+                                                    <input className="fst" value="0" type="radio" disabled checked /> 
+                                                    <label for="fst-1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                          <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 
+                                                          103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 
+                                                          46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.
+                                                          7-23.6-45.6-23.9-57.4 0z"/></svg>
+                                                    </label>
+                                                      <input className="fst" id="fst-1" value="1" type="radio" />
+                                                    
+                                                    <label for="fst-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                          <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7
+                                                           54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7
+                                                            68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                                                    </label>
+                                                      <input className="fst" id="fst-2" value="2" type="radio" />
+                                                    
+                                                    <label for="fst-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                          <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7
+                                                           54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 
+                                                           68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 
+                                                           150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                                                    </label>
+                                                     <input className="fst" id="fst-3" value="3" type="radio" />
+                                                    
+                                                    <label for="fst-4">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                          <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7
+                                                           54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 
+                                                           68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 
+                                                           150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                                                    </label>
+                                                     <input className="fst" id="fst-4" value="4" type="radio" />
+                                                    
+                                                    <label for="fst-5">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                          <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7
+                                                           54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 
+                                                           68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 
+                                                           150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+                                                    </label>
+                                                      <input className="fst" id="fst-5" value="5" type="radio" />
+                                               </div>
+                                         <span>7.5</span>
                                         </div>
+                                        
                                         <div className='order_info'>
                                             <img src={circle} alt="" />
                                             <span className='order_span'>194 orders</span>
@@ -78,8 +126,11 @@ const ItemsConteiner = () => {
                                         </div>
                                     </div>
                                     <div className='spans_cont'>
-                                        <span className='lorem'>{product.description}</span>
-                                        <span className='view_detail'>View details</span>
+                                        <span className='lorem' style={{ display: show === product.id ? 'block' : 'fullproductid'}}>{product.description}</span>
+                                        <span className='view_detail' onClick={() => (setShow(product.id) )}>
+                                        {/* <span className='view_detail'onClick={() => setShow((prevShow) => (prevShow === product.id ? '' : product.id))}> */}
+                                          
+                                          View details</span>
                                     </div>
                                 </div>              
                                 <div className='favorite'>
@@ -89,40 +140,6 @@ const ItemsConteiner = () => {
 
                 
             })}
-
-          {/* <div className='nav_2'>
-                    <div className='product_img1'>
-                        <img src={phone} alt="" />
-                    </div>
-                    <div className='prise_description'>
-                        <span className='span1'>Canon Camera EOS 2000, Black 10x zoom</span>
-                        <div className='span_box'>
-                            <span className='new_prise'>$998.00</span>
-                            <span className='old_prise'> <del>$1199.00</del></span>
-                        </div>
-                        <div className='rating_box'>
-                            <div className='rating_star'>
-                                <img src={rating} alt="" />
-                                <span>7.5</span>
-                            </div>
-                            <div className='order_info'>
-                                <img src={circle} alt="" />
-                                <span className='order_span'>194 orders</span>
-                                <img src={circle} alt="" />
-                                <span className='free_span'>Free Shipping</span>
-                            </div>
-                        </div>
-                        <div className='spans_cont'>
-                            <span className='lorem'>Lorem ipsum dolor sit amet consectetur adipisicing elit. doloribus adipisci iste at nesciunt libero aspernatur ea veniam! Aliquid, placeat.</span>
-                            <span className='view_detail'>View details</span>
-                        </div>
-                    </div>              
-                    <div className='favorite'>
-                         <img src={favorite} alt="" />
-                    </div>   
-            </div>
-
-                 */}
 
 
 
