@@ -56,8 +56,8 @@
     cursor: pointer;
 }
 
-.see_all span:hover {
-    transform: scale(1.5);
+.see_all:hover {
+    transform: scale(0.98);
 
 }
 

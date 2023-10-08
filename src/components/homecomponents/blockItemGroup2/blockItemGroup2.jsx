@@ -43,7 +43,7 @@ const BlockItemGroup2 = () => {
                     </div> )
                 
           })}
-
+        
       </div>
 
     </section>

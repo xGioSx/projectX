@@ -20,17 +20,17 @@ const CategoryFilter = () => {
     <div className='single_filter_container'>
         <div className='filter_header_container' onClick={() => (setShow(prev => !prev))}>
             <span><b>Category</b></span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className={show? '' : 'svg-down'} >
                 <path d="M12 8.29504L6 14.295L7.41 15.705L12 11.125L16.59 15.705L18 14.295L12 8.29504Z" fill="#8B96A5"/>
             </svg>
         </div>
         <div className={`filter_content ${show? 'showbrands' : ''}`}>
-            <ul className='filtes_content_ul'>
+            <ul className={`filtes_content_ul ${seeAll? 'seeallcategories' : ''}`}>
                   {categories.map((product) => {
                         return<li  key={product.id}>{product.name}</li>
                         })} 
             </ul>
-            <div className='see_all'><span onClick={() => (setSeeAll(prev => !prev))}>{seeAll? 'less' : `See All`}</span></div>
+            <div className='see_all'><span onClick={() => (setSeeAll(prev => !prev))}>{seeAll? 'many' : `See all`}</span></div>
         </div>
     </div>
   )

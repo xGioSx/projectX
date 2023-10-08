@@ -81,9 +81,13 @@ const Brandinfo = () => {
 
                 <div className='about'>
                     <ul className='about_ul'>
-                        <li><b>for users</b></li> 
-                        <Link to='/signup' className='link_style' ><li>login</li> </Link>
-                        <Link to='/register' className='link_style'><li>register</li> </Link>
+                        <li><b>for users</b></li>
+                        <li>
+                            <Link to='/signup' className='link_style'>login</Link>
+                        </li>
+                        <li>
+                            <Link to='/register' className='link_style'>register</Link>
+                        </li>
                         <li>settings</li> 
                         <li>my orders</li> 
                     </ul>
