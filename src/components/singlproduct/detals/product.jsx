@@ -1,13 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './product.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { getSinglProduct } from '../../../store/singlproduct';
-import product1 from '../../../assets/pictures/product1.png';
-import product3 from '../../../assets/pictures/product3.png';
-import product4 from '../../../assets/pictures/product4.png';
-import product5 from '../../../assets/pictures/product5.png';
-import product6 from '../../../assets/pictures/product6.png';
-import product7 from '../../../assets/pictures/product7.png';
+import { getSingleProduct } from '../../../store/singleproduct';
 
 import aviable from '../../../assets/logo/Aviable.png';
 import favorite from '../../../assets/logo/favorite.png';
@@ -15,41 +9,49 @@ import basket from '../../../assets/logo/basket.png';
 import circle from '../../../assets/logo/circule.png';
 import star from '../../../assets/logo/rating.png';
 import chat from '../../../assets/logo/message.png';
+import { useParams } from 'react-router-dom';
 
 const Product = () => {
 
     const dispatch = useDispatch ()
-
-    const [selectedImage, setSelectedImage] = useState(product1);
-
+    
+    const [selectedImage, setSelectedImage] = useState('');
+    
     const handleImageClick = (image) => {
-      setSelectedImage(image);
+        setSelectedImage(image);
     };
-  
+    const params = useParams()
+    
+    
+    const {singleproduct, images} = useSelector (state => state.singleProduct) 
 
+    const img = singleproduct.images
+
+  console.log(singleproduct)
+
+ useEffect(() => {
+    dispatch(getSingleProduct(params.productid)) 
+ },[dispatch])
 
   return (
             <div className='about_product_container'>
         <div className='about_product_container2'>
         <div className='image_container'>
             <div className='main_image'>
-            <img src={selectedImage} alt='' />
+             <img src={selectedImage? selectedImage : images[1]} alt='' />
             </div>
 
             <div className='small_images'>
-            <img src={product7} alt='' onClick={() => handleImageClick(product7)} />
-            <img src={product3} alt='' onClick={() => handleImageClick(product3)} />
-            <img src={product4} alt='' onClick={() => handleImageClick(product4)} />
-            <img src={product5} alt='' onClick={() => handleImageClick(product5)} />
-            <img src={product6} alt='' onClick={() => handleImageClick(product6)} />
-            <img src={product7} alt='' onClick={() => handleImageClick(product7)} />
+                {images.map((item, i) => {
+                    return <img key={i + 7554356} src={item} alt='' onClick={() => handleImageClick(item)} />   
+                })}
             </div>
         </div>
 
         <div className='info_container'>
             <div className='info_1'>
             <img src={aviable} alt="" />
-            <p>Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</p>
+            <p>{singleproduct.name}</p>
             </div>
 
             <div className='info_2'>
@@ -67,17 +69,18 @@ const Product = () => {
             </div>
 
             <div className='info_3'>
+
             <div className='pink'>
                 <div className='pink_box'> 
-                <p>$98.00</p>
+                <p>${singleproduct.price}</p>
                 <span>50-100 pcs</span>
                 </div>
                 <div className='pink_box'> 
-                <p>$98.00</p>
+                <p>${Math.floor(singleproduct.price - (singleproduct.price / 100 * 10))}</p>
                 <span>50-100 pcs</span>
                 </div>
                 <div className='pink_box'> 
-                <p>$98.00</p>
+                <p>${Math.floor(singleproduct.price - (singleproduct.price / 100 * 15))}</p>
                 <span>50-100 pcs</span>
                 </div>
             </div>

@@ -30,8 +30,8 @@ const CategoryFilter = () => {
                         return<li  key={product.id}>{product.name}</li>
                         })} 
             </ul>
-            <div className='see_all'><span onClick={() => (setSeeAll(prev => !prev))}>{seeAll? 'many' : `See all`}</span></div>
         </div>
+            <div className='see_all' style={{display: show? 'none' : 'block'}}><span onClick={() => (setSeeAll(prev => !prev))}>{seeAll? 'See All' : `Less`}</span></div>
     </div>
   )
 }
