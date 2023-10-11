@@ -76,58 +76,9 @@
 }
 
 
-.brand1 .soc_icons .facebook:active{
-    transform: scale(0.98);
-    background-color: #1877F2;
-    border-radius: 20px;
-}
-.brand1 .soc_icons .facebook:hover{
-    transform: scale(0.98);
-    background-color: #1877F2;
-    border-radius: 20px;
-}
 
-.brand1 .soc_icons :nth-child(2):active{
-    transform: scale(0.98);
-    background-color: rgb(29, 155, 240);
-    border-radius: 20px;
-}
-.brand1 .soc_icons :nth-child(2):hover{
-    transform: scale(0.98);
-    background-color: rgb(29, 155, 240);
-    border-radius: 20px;
-}
-
-.brand1 .soc_icons :nth-child(3):active{
-    transform: scale(0.98);
-    background-color: #1a0dab;
-    border-radius: 20px;
-}
-.brand1 .soc_icons :nth-child(3):hover{
-    transform: scale(0.98);
-    background-color: #1a0dab;
-    border-radius: 20px;
-}
-
-.brand1 .soc_icons :nth-child(4):active{
-    transform: scale(0.98);
-    background-color: #681da8;
-    border-radius: 20px;
-}
-.brand1 .soc_icons :nth-child(4):hover{
-    transform: scale(0.98);
-    background-color: #681da8;
-    border-radius: 20px;
-}
-
-.brand1 .soc_icons .youtube:active{
-    transform: scale(0.98);
-    background-color: red;
-    border-radius: 20px;
-}
-.brand1 .soc_icons .youtube:hover{
-    transform: scale(0.98);
-    background-color: red;
+.brand1 .soc_icons img:hover {
+    transform: scale(1.15);
     border-radius: 20px;
 }
 
@@ -145,6 +96,7 @@
 
 .about .about_ul {
     list-style: none;
+    text-decoration:none;
     display: flex;
     justify-content: center;
     flex-direction: column;

@@ -3,16 +3,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../../../store/products'
 import './itemsConteiner.css'
 import SingleItem from '../singleItem/singleItem'
-import circle from '../../../assets/logo/circule.png'
-import favorite from '../../../assets/logo/favorite.png'
+import { useSearchParams } from 'react-router-dom'
 
 const ItemsConteiner = () => {
-        const dispatch = useDispatch ()
+        const [searchParams, setSearchParams] = useSearchParams()
+        const params = Object.fromEntries([...searchParams]);
+
+        let filter = {categoryId:params.categoryId, priceFrom:params.priceFrom, priceTo:params.priceTo}
+
+        const dispatch = useDispatch()
 
         const {products} = useSelector ((state) => state.products)
         useEffect(() => {
-            dispatch(getProducts())
-        }, [dispatch])
+            dispatch(getProducts(filter))
+        }, [dispatch, searchParams])
         
 
 
@@ -20,10 +24,10 @@ const ItemsConteiner = () => {
     <div className='full_item_container'>
           <div className='selected_product'>
             <div className='summary_items'>
-              <span> 12,911 items in <b>Mobile accessory</b></span>
+              <span> {products.length} items in <b>{params.categoryName? params.categoryName : 'store'}</b></span>
             </div>
             <div className='verify_input'>
-              <input type="checkbox" className="verify_only" id="" />
+              <input type="checkbox" className="verify_only" id="verified_only" />
               <label htmlFor="verified_only">Verified only</label>
             </div>
             <div className='select_value'>
@@ -59,7 +63,7 @@ const ItemsConteiner = () => {
 
 
           {products.map((product) => {
-                return  <SingleItem product={product}/>
+                return  <SingleItem key={product.id} product={product}/>
             })}
 
 

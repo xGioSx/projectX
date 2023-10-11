@@ -29,7 +29,7 @@ const SingleItem = ({product}) => {
                         </div>
                     </div>
                     <div className='spans_cont'>
-                        <span className='lorem' style={{ height: show? '200px' : '70px'}}>{product.description}</span>
+                        <span className='lorem' style={{ height: show? '200px' : ''}}>{product.description}</span>
                         <span className='view_detail' onClick={() => (setShow(prev => !prev))}>
                           View details</span>
                     </div>

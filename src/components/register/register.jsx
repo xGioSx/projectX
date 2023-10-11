@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './register.css'
+import { useDispatch } from 'react-redux';
 import google from '../../assets/logo/google.png';
 import facebook from '../../assets/logo/Facebook.png';
-
+import {registration} from '../../store/registration';
 
 const Register = () => {
+    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
+    const [password, setPassword] = useState('')
+
+    const dispatch = useDispatch()
+    
+    const handleRegister = () => {
+        if (email && userName && password) {
+          dispatch(registration({userName, password, email}))
+        } 
+    } 
+
+
+
     return (
         <div className='login_container'>
             <div className='login_container2'>
@@ -14,12 +29,12 @@ const Register = () => {
                     </div>
                     <div className='sign_inp_container'>
                         <label htmlFor='email'>Email</label>
-                        <input type='email' id='email' placeholder='Enter your Email' />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' id='email' placeholder='Enter your Email' />
     
                         <div className='inp_grupe'>
                             <div className='inp_grupe1'>
                                 <label htmlFor='username'>User Name</label>
-                                <input type='text' id='username' placeholder='Enter your user name' />
+                                <input value={userName} onChange={(e) => setUserName(e.target.value)}type='text' id='username' placeholder='Enter your user name' />
                             </div>
                             <div className='inp_grupe1'>
                                 <label htmlFor='number'>phone number</label>
@@ -27,12 +42,12 @@ const Register = () => {
                             </div>   
                         </div>  
                         <label htmlFor='password'>Password</label>
-                        <input type='password' id='password' placeholder='Enter your password' />
-                        <label htmlFor='password'>Confirm Password</label>
-                        <input type='password' id='password' placeholder='Re-Enter your password' />
+                        <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' id='password' placeholder='Enter your password' />
+                        <label htmlFor='re-password'>Confirm Password</label>
+                        <input type='password' id='re-password' placeholder='Re-Enter your password' />
                         <span> <ins>forgot your password?</ins></span>
                     </div>      
-                    <button>Register</button>
+                    <button onClick={() => handleRegister()}>Register</button>
     
                     <div className='singn_logo_box'>
                         <div className='contactwith_span'>

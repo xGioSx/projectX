@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 20%;
     margin-top: 29px;
-    margin-left: 65px;
+    margin-left: auto;
     border: 2px solid green;
 }
 

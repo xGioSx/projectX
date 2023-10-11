@@ -1,17 +1,31 @@
 .label_filter_ul{
     text-transform: capitalize;
     color:  #505050;
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     padding: 9px 11px 8px 0px;
     column-gap: 5px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.svg-down {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.seeallbrands {
+    height: 150px;
 }
 
 .brand_filter_container {
     border-bottom: 1px solid #8B96A5;
+    padding: 5px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1); 
 }
 
 

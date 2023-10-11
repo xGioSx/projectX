@@ -24,11 +24,11 @@ const BlockItemGroup = () => {
 
       <div className='product_all'>  
         {mostDemandProducts.map((product) => {
-          return ( <div className='product_list'>
+          return ( <div key={product.id} className='product_list'>
                     <div className='img'>  <img src={product.images} alt="" /></div>
                     <div className='info'>
-                      <span>{product.name}</span>
-                      <span>from <br />{product.price}</span>
+                      <span title={product.description} >{product.model}</span>
+                      <span>from <br />${product.price}</span>
                     </div>
                   </div>)
         })}

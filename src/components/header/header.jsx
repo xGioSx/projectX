@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './header.css'
 import brandphoto from '../../assets/logo/brand.png'
-import user1 from '../../assets/logo/user.png'
-import user2 from '../../assets/logo/message.png'
-import user3 from '../../assets/logo/heart.png'
-import user4 from '../../assets/logo/cart.png'
+import user1 from '../../assets/logo/user1.png'
+import user2 from '../../assets/logo/message1.png'
+import user3 from '../../assets/logo/favorite1.png'
+import user4 from '../../assets/logo/cart2.png'
 
 
 const Header = () => {

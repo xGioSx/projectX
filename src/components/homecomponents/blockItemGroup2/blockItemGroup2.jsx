@@ -34,11 +34,11 @@ const BlockItemGroup2 = () => {
 
       <div className='product_all2'>
           {latestProducts.map((product) => {
-            return  (<div className='product_list2'>
+            return  (<div key={product.id} className='product_list2'>
                           <div className='img2'><img src={product.images} alt="" /></div>
                           <div className='info2'>
-                            <span>{product.name}</span>
-                            <span>from <br /> {product.price} </span>
+                            <span title={product.description}>{product.brand}</span>
+                            <span>from <br /> ${product.price} </span>
                             </div>
                     </div> )
                 

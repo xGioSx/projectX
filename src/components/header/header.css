@@ -13,6 +13,7 @@ header {
     width: 89%;
     margin-left: auto;
     margin-right: auto;  
+    list-style: none;
 }
 
 
@@ -37,6 +38,11 @@ header {
     align-items: center;
     column-gap: 10px;
     
+}
+
+.user_conteiner div img {
+    width: 25px;
+    height: 25px;
 }
 
 .user_conteiner div {

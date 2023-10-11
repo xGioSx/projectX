@@ -3,33 +3,47 @@ import { useDispatch, useSelector } from 'react-redux'
 import './main.css'
 import userlogo from '../../../assets/logo/Avatar1.png'
 import { getCategories } from '../../../store/categories'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 
 const Main = () => {
+    const [searchParams, setSearchParams ] = useSearchParams()
+    const params = Object.fromEntries([...searchParams]);
 
     const dispatch = useDispatch ()
 
+    const navigate = useNavigate()
+
     const {categories} = useSelector((state) => state.categories)
+
     useEffect(() => {
       dispatch(getCategories())
 
     }, [dispatch])
 
+    const handleCategory = (id, category) => {
+      setSearchParams ({
+        ...params, 
+        categoryId: id,
+        categoryName: category,
+      })
+      navigate (`/ProductPage?categoryId=${id}`)
+
+      // const searchParams = new URLSearchParams();
+      //     searchParams.set('categoryId', id);
+      //     navigate(`/ProductPage?${searchParams.toString()}`);
+    }
 
 
   return (
 
 
     <section className='main_section'>
-
-
-
       <div className='productli_ul'>
         
 
         <ul className='productsli'>
         {categories.map((product) => {
-              return<li  key={product.id}>{product.name}</li>
+              return<li  key={product.id} onClick={() => handleCategory(product.id, product.name)}>{product.name}</li>
 
               })} 
         </ul>

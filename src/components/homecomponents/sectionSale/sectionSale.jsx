@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
 import './sectionSale.css'
-import watches from '../../../assets/pictures/watches.png'
-import laptops from '../../../assets/pictures/leptop.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOfferedProducts } from '../../../store/offeredproducts'
 

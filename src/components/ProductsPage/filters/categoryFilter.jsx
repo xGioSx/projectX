@@ -2,10 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategories } from '../../../store/categories'
 import './categoryFilter.css'
+import { useSearchParams } from 'react-router-dom'
 
 const CategoryFilter = () => {
     const [show, setShow] = useState(false)
     const [seeAll, setSeeAll] = useState(false)
+
+    const [searchParams, setSearchParams ] = useSearchParams()
+    const params = Object.fromEntries([...searchParams]);
+
+    
 
     const dispatch = useDispatch ()
 
@@ -15,6 +21,13 @@ const CategoryFilter = () => {
 
     }, [dispatch])
 
+    const handleCategory = (id, category) => {
+      setSearchParams ({
+        ...params, 
+        categoryId: id,
+        categoryName: category,
+      })
+    }
 
   return (
     <div className='single_filter_container'>
@@ -27,7 +40,7 @@ const CategoryFilter = () => {
         <div className={`filter_content ${show? 'showbrands' : ''}`}>
             <ul className={`filtes_content_ul ${seeAll? 'seeallcategories' : ''}`}>
                   {categories.map((product) => {
-                        return<li  key={product.id}>{product.name}</li>
+                        return<li  onClick={() => handleCategory(product.id, product.name)} key={product.id}>{product.name}</li>
                         })} 
             </ul>
         </div>

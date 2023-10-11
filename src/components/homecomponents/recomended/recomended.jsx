@@ -1,96 +1,42 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useSearchParams, } from 'react-router-dom'
+import { getProducts } from '../../../store/products'
 import './recomended.css'
-import wallet from "../../../assets/pictures/wallet.png"
 
 const Recomended = () => {
+  // const [searchParams, setSearchParams] = useSearchParams()
+  // const params = Object.fromEntries([...searchParams]);
+
+  const dispatch = useDispatch()
+  
+
+  const {products} = useSelector((state) => state.products)
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [dispatch])
+
+ 
+
   return (
     <section className='recomendedsection'>
-
       <div className='recomended'>
-
           <div className='recomendSpan'> 
             <span> <b>recomended items</b></span>
           </div>
-
           <div className='all_product'>
-            <ul className='recomended_items_ul'>
-
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
+            <ul className='recomended_items_ul'>             
+                {products.map((product) => {
+                  return ( <Link to={`/singlproduct/${product.id}`}>
+                  <li key={product.id}  className='prduct_list'>
+                  <img src={product.images} alt="" />
                   <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
+                    <span className='price'>${product.price}</span>
+                    <span className='product' title={product.description}>{product.brand}</span>
                   </div>
-                </div>
-              </li>
-              
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
-                  <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
-                  <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
-                  <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
-                  <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
-                  <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
-                  <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className='prduct_list'>
-                  <img src={wallet} alt="" />
-                  <div className='product_info'>
-                    <span className='price'>$34.00</span>
-                    <span className='product'>leather wallet</span>
-                  </div>
-                </div>
-              </li>
-              
-              
-              
+                </li> 
+                </Link>)
+                })}              
             </ul>
           </div>
       </div>
@@ -100,3 +46,5 @@ const Recomended = () => {
 }
 
 export default Recomended
+
+
