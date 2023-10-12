@@ -28,8 +28,8 @@ const Pricerange = () => {
         +minValue < +maxValue) {
         setSearchParams({
             ...params,
-            priceRange: minValue + "-" + maxValue,
-            pageNumber: 1
+            priceFrom: minValue,
+            priceTo: maxValue,
         })}
   };
 

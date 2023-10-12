@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './signup.css';
 import google from '../../assets/logo/google.png';
 import facebook from '../../assets/logo/Facebook.png';
 import { Link } from 'react-router-dom';
-
+import { signin } from '../../store/login';
 
 
 
 const Signup = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const dispatch = useDispatch()
+
+  const handleLogIn = () => {
+    if (email && password) {
+      dispatch(signin({email, password}))
+    }
+  }
+
+
+
   return (
     <div className='login_container'>
       <div className='login_container2'>
@@ -17,15 +31,15 @@ const Signup = () => {
             <h1>Sign in</h1>
           </div>
           <div className='sign_inp_container'>
-              <label htmlFor='username'>User Name</label>
-              <input type='text' id='username' placeholder='Enter your user name' />
+              <label htmlFor='email'>User Name</label>
+              <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' id='email' placeholder='Enter your user eMail' />
 
               <label htmlFor='password'>Password</label>
-              <input type='password' id='password' placeholder='Enter your password' />
+              <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' id='password' placeholder='Enter your password' />
               <span> <ins>forgot your password?</ins></span>
           </div>
               <div className='buttons'>
-                 <button className='login_button'>Log In</button>
+                 <button onClick={() => handleLogIn()} className='login_button'>Log In</button>
                 <Link to='/register' className='buttons'>
                   <button className='create_new_account_button'>create new account</button>
                 </Link>

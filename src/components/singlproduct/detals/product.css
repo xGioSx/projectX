@@ -181,6 +181,10 @@
     color: white;  
 }
 
+.add_cart_butt_cont button:active{
+    transform: scale(0.96);
+}
+
 
 
 
