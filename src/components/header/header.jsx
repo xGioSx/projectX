@@ -40,7 +40,9 @@ const Header = () => {
                     <span>orders</span>
                 </div>
                 <div>
+                <Link to={'/cart'}>
                     <img src={user4} alt="" />
+                </Link>
                     <span>my cart</span>
                 </div>
 

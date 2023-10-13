@@ -9,6 +9,7 @@ import registrationReducer from "./registration";
 import signinReducer  from "./login";
 import addtocartReducer from "./addtocart";
 import mycartReducer from "./mycart";
+import deleteCartReducer from "./deletecart";
 
 const store = configureStore({
     reducer: {
@@ -22,6 +23,7 @@ const store = configureStore({
         signin: signinReducer,
         addtocart:addtocartReducer,
         myCart:mycartReducer,
+        deleteCart: deleteCartReducer,
     }
 })
 

@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './cartcomp.css'
-import shirt from '../../assets/pictures/shirt.png'
 import arrowdown from '../../assets/logo/arrowdown.png'
 import leftarrow from '../../assets/logo/leftarrow.png'
 import lock from '../../assets/logo/lock.png'
 import message from '../../assets/logo/chat.png'
 import truck from '../../assets/logo/truck.png'
 import { myCart } from '../../store/mycart'
+import {deleteCart} from '../../store/deletecart'
 
 
 const Cartcomp = () => {
@@ -15,12 +15,16 @@ const Cartcomp = () => {
   const dispatch = useDispatch()
 
   const {products} = useSelector((state) => state.myCart)
+  const {loading} = useSelector((state) => state.deleteCart)
 
 
+  const deleteFromCart = (id) => { 
+    dispatch(deleteCart(id))
+  }
 
    useEffect(() => {
     dispatch(myCart())
-   }, [])
+   }, [dispatch, loading])
 
 
 
@@ -44,7 +48,7 @@ const Cartcomp = () => {
             <span>Size: medium, Color: blue,  Material: Plastic Seller: Artel Market</span>
           </div>
           <div className='cart_button_container'>
-            <button>remove</button>
+            <button onClick={() => {deleteFromCart(item.id)}}>remove</button>
             <button>save for latter</button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './main.css'
 import userlogo from '../../../assets/logo/Avatar1.png'
@@ -6,9 +6,19 @@ import { getCategories } from '../../../store/categories'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 
 const Main = () => {
+    const [loggedIn, setLoggedIn] = useState(false)
     const [searchParams, setSearchParams ] = useSearchParams()
     const params = Object.fromEntries([...searchParams]);
 
+    const token = JSON.parse(localStorage.getItem('user'))
+    
+    useEffect(() => {
+      if (token){
+        setLoggedIn(true)
+      } else {
+        setLoggedIn(false)
+      }
+    },[token])
     const dispatch = useDispatch ()
 
     const navigate = useNavigate()
@@ -27,10 +37,11 @@ const Main = () => {
         categoryName: category,
       })
       navigate (`/ProductPage?categoryId=${id}`)
+    }
 
-      // const searchParams = new URLSearchParams();
-      //     searchParams.set('categoryId', id);
-      //     navigate(`/ProductPage?${searchParams.toString()}`);
+    const logOut = () => {
+      localStorage.removeItem('user')
+      setLoggedIn(false)
     }
 
 
@@ -60,15 +71,19 @@ const Main = () => {
               <img src={userlogo} alt="" />
               <span>hi, user <br />let`s get started</span>
             </div>
-            <div className='buttons'>
-              <button className='join_now'>join now</button>
-                 <Link to='/signup' className='log_in'>
-                    <button className='log_in'>log in</button>
-                 </Link> 
-          
-            </div>
+              {loggedIn?  (<div className='buttons'>
+                <button onClick={() => {logOut()}} className='log_in'>log out</button> 
+                <button className='join_now'>profile</button>
+            </div>) : (<div className='buttons'>
+              <Link to='/signup' className='log_in'>
+                <button className='log_in'>log in</button>
+              </Link> 
+              <Link to='/register' className='log_in'>
+                <button className='join_now'>join now</button>
+              </Link>
+            </div>)
+            }
           </div>
-
           <div className='block1'>
             <span>Get US $10 off <br /> with a new  <br />supplier</span>
           </div>
