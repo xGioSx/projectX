@@ -4,6 +4,7 @@ import './main.css'
 import userlogo from '../../../assets/logo/Avatar1.png'
 import { getCategories } from '../../../store/categories'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
+import { signout } from '../../../store/login'
 
 const Main = () => {
     const [loggedIn, setLoggedIn] = useState(false)
@@ -40,7 +41,7 @@ const Main = () => {
     }
 
     const logOut = () => {
-      localStorage.removeItem('user')
+      dispatch(signout())
       setLoggedIn(false)
     }
 

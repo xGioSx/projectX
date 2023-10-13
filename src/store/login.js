@@ -2,8 +2,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-export const signin = createAsyncThunk('user/signin', async ({email, password}) => {
 
+
+const user = JSON.parse(localStorage.getItem("user"));
+export const signin = createAsyncThunk('user/signin', async ({email, password}) => {
+    
     try {
         const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/User/LogIn',
         {
@@ -19,26 +22,39 @@ export const signin = createAsyncThunk('user/signin', async ({email, password}) 
     }
 })
 
+export const signout = createAsyncThunk('user/signout', async () => {
+    localStorage.removeItem('user')
+})
+
 const signinSlice = createSlice ({
     name: 'signin',
     initialState: {
         error: null,
         loading: false,
+        isLoggedIn: JSON.parse(localStorage.getItem("user"))? true : false
     },
     reducers: {
 
     },
     extraReducers: {     
         [signin.pending]: (state) => {
-        state.loading = false;
-        state.isLoggedIn = true
+        state.loading = true;
+        state.isLoggedIn = false
         },
         [signin.fulfilled]: (state) => {
             state.loading = false;
+            state.isLoggedIn = true
         },
         [signin.rejected]: (state) => {
             state.loading = false;
-            state.isLoggedIn = true
+            state.isLoggedIn = false
+        },
+        [signout.pending]: (state) => {
+            state.loading = true;
+        },
+        [signout.fulfilled]: (state) => {
+            state.loading = false;
+            state.isLoggedIn = false
         }
     }
 })

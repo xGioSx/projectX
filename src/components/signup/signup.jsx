@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState, } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './signup.css';
 import google from '../../assets/logo/google.png';
 import facebook from '../../assets/logo/Facebook.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 import { signin } from '../../store/login';
 
 
@@ -12,15 +12,25 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const token = JSON.parse(localStorage.getItem('user'))
+  const {isLoggedIn} = useSelector((state) => state.signin)
+
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
+
+
+
   const handleLogIn = () => {
-    if (email && password) {
-      dispatch(signin({email, password}))
+    dispatch(signin({ email, password }))
+  };
+
+  useEffect(() => {
+    if(isLoggedIn) {
+      navigate('/')
     }
-  }
-
-
+  }, [isLoggedIn])
+  
 
   return (
     <div className='login_container'>

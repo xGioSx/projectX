@@ -19,8 +19,6 @@ const Recomended = () => {
     dispatch(getProducts(params))
   }, [dispatch])
 
- console.log(products)
-
   return (
     <section className='recomendedsection'>
       <div className='recomended'>
