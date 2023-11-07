@@ -3,13 +3,16 @@ import axios from "axios";
 
 export const getSingleProduct = createAsyncThunk ('products/getSingleProduct', async (id) => {
     try {
-        const response = await axios.get(`https://amazon-digital-prod.azurewebsites.net/api/product/products/${id}`)
+        // const response = await axios.get(`https://amazon-digital-prod.azurewebsites.net/api/product/products/${id}`)
+        const response = await axios.get(`https://digitalinstitute-amazon.azurewebsites.net/api/product/products/${id}`)
         const data = response.data
         return data
     }catch (error) {
         throw error
     }
 });
+
+
 
 
 const singleProductSlice = createSlice( {

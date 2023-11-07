@@ -4,7 +4,8 @@ import axios from "axios";
 
 export const myCart = createAsyncThunk('cart/mycart', async () => {
     try {
-        const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/cart/getmycartproducts',
+        // const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/cart/getmycartproducts',
+        const response = await axios.get('https://digitalinstitute-amazon.azurewebsites.net/api/cart/getmycartproducts',
         {headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${JSON.parse(localStorage.getItem('user'))}`,}}
         )
         console.log(response)

@@ -6,7 +6,8 @@ export const registration = createAsyncThunk('user/register', async ({userName, 
     // const {userName, password, email} = user
     console.log(userName, password, email)
     try {
-        const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/user/registerUser',
+        // const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/user/registerUser',
+        const response = await axios.post('https://digitalinstitute-amazon.azurewebsites.net/api/user/registerUser',
         {
             userName: userName,
             password: password,

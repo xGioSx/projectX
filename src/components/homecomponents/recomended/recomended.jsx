@@ -5,8 +5,6 @@ import { getProducts } from '../../../store/products'
 import './recomended.css'
 
 const Recomended = () => {
-  // const [searchParams, setSearchParams] = useSearchParams()
-  // const params = Object.fromEntries([...searchParams]);
 
   const dispatch = useDispatch()
 
