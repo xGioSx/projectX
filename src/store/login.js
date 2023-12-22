@@ -9,7 +9,7 @@ export const signin = createAsyncThunk('user/signin', async ({email, password}) 
     
     try {
         // const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/User/LogIn',
-        const response = await axios.post('https://digitalinstitute-amazon.azurewebsites.net/api/User/LogIn',
+        const response = await axios.post('https://ngglobalwebapi20231210182820.azurewebsites.net/api/User/LogIn',
         {
             email: email,
             password: password,

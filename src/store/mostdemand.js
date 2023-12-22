@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getMostDemandProducts = createAsyncThunk('products/mostDemandProducts', async () => {
     try {
         // const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/product/mostdemandproducts')
-        const response = await axios.get('https://digitalinstitute-amazon.azurewebsites.net/api/product/mostdemandproducts')
+        const response = await axios.get('https://ngglobalwebapi20231210182820.azurewebsites.net/api/product/mostdemandproducts')
         const data = response.data
         return data
     }catch (error) {
