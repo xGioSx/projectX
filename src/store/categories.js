@@ -4,7 +4,7 @@ import axios from "axios"
 export const getCategories = createAsyncThunk('products/categories', async () => {
     try {
         // const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/product/categories');
-        const response = await axios.get('https://ngglobalwebapi20231210182820.azurewebsites.net/api/product/categories');
+        const response = await axios.get('https://digitalamazon.azurewebsites.net/api/product/categories');
         const data = response.data;
         return  data ;
     }catch(error) {
